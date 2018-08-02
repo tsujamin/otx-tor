@@ -1,0 +1,14 @@
+[Unit]
+Description=AlienVault OTX TOR pulse updater
+After=network.target
+
+[Service]
+User=benjamin
+Group=benjamin
+Type=simple
+ExecStart=/home/benjamin/otx-tor/bin/python3 otx-tor.py
+WorkingDirectory=/home/benjamin/otx-tor
+EnvironmentFile=/home/benjamin/otx-tor/env
+
+[Install]
+WantedBy=multi-user.target
